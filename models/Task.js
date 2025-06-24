@@ -5,7 +5,8 @@ const taskSchema = new mongoose.Schema({
   deadline: { type: Date },
   tags: [{ type: String }],
   priority: { type: String, enum: ['low', 'medium', 'high'], default: 'low' },
-  category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category' }
+  category: { type: String },
+  status: { type: String, enum: ['Pending', 'In Progress', 'Completed'], default: 'Pending' }
 });
 
 module.exports = mongoose.model('Task', taskSchema);
