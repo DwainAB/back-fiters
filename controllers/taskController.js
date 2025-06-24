@@ -19,7 +19,7 @@ exports.createTask = async (req, res) => {
       category,
       tags,
       priority,
-      status: status || 'Pending', // Assurer la valeur par défaut
+      status: status || 'Pending',
     });
     await task.save();
     res.status(201).json(task);
